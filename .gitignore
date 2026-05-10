@@ -485,3 +485,5 @@ $RECYCLE.BIN/
 # App settings with potential secrets
 appsettings.json
 appsettings.Development.json
+
+flyway.conf

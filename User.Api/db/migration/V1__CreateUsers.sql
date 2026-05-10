@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS public."Users"
+(
+    "Id"        SERIAL PRIMARY KEY,
+    "Name"      VARCHAR(255) NOT NULL,
+    "Email"     VARCHAR(255) NOT NULL UNIQUE,
+    "Phone"     VARCHAR(20),
+    "CreatedAt" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    "UpdatedAt" TIMESTAMP WITH TIME ZONE,
+    "IsDeleted" BOOLEAN DEFAULT false
+);

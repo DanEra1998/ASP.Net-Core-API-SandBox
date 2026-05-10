@@ -23,4 +23,8 @@ public class AppDbContext : DbContext
     // "Users" is the property name = what you'll call it in code e.g. _db.Users
     // "=> Set<UserEntity>()" is EF Core's way of saying "give me that table"
     public DbSet<UserEntity> Users => Set<UserEntity>();
+
+    //adding CarLoans to Database below
+    public DbSet<CarLoanEntity> CarLoans => Set<CarLoanEntity>();
+    
 }
