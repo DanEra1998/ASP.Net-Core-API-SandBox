@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 // Import our Data folder so we can reference AppDbContext
 using User.Api.Data;
+using User.Api.Services;
 
 // Creates the "builder" — this is where you CONFIGURE your app
 // args = command line arguments passed when running the app
@@ -21,6 +22,12 @@ builder.Services.AddSwaggerGen();
 // GetConnectionString("DefaultConnection") looks for "DefaultConnection" in your config
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register UserService for Dependency Injection
+// Scoped = new instance created per HTTP request
+// IUserService = interface (what controllers ask for)
+// UserService = concrete class (what gets injected)
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Finalizes all the configuration above and creates the actual app
 var app = builder.Build();
