@@ -28,6 +28,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // IUserService = interface (what controllers ask for)
 // UserService = concrete class (what gets injected)
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICarLoanService, CarLoanService>();
 
 // Finalizes all the configuration above and creates the actual app
 var app = builder.Build();
